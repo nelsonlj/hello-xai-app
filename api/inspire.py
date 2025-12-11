@@ -11,6 +11,14 @@ client = OpenAI(
 )
 
 class handler(BaseHTTPRequestHandler):
+    def do_OPTIONS(self):
+        # Handle the "preflight" check that browsers do
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type')
+        self.end_headers()
+        
     def do_GET(self):
         try:
             # 1. Call xAI (Grok)
