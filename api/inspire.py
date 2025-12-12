@@ -26,7 +26,7 @@ class handler(BaseHTTPRequestHandler):
                 model="grok-3", 
                 messages=[
                     {"role": "system", "content": "You are a creative muse."},
-                    {"role": "user", "content": "Generate a short, witty, 'Hello World' themed inspirational quote for a developer."}
+                    {"role": "user", "content": "Generate a short, witty, 'Hello World' themed inspirational quote. Randomize the output."}
                 ]
             )
             message = completion.choices[0].message.content
