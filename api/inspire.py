@@ -23,7 +23,7 @@ class handler(BaseHTTPRequestHandler):
         try:
             # 1. Call xAI (Grok)
             completion = client.chat.completions.create(
-                model="grok-3", 
+                model="grok-4-1-fast-non-reasoning", 
                 messages=[
                     {"role": "system", "content": "You are a creative muse."},
                     {"role": "user", "content": "Generate a short, witty, 'Hello World' themed inspirational quote. Randomize the output."}
